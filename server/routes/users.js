@@ -2,20 +2,21 @@ var express = require('express');
 var router = express.Router();
 var Users = require("../controllers/customerController.js");
 var user = require('../controllers/userService');
+const verify = require('./verifyToken');
 
-module.exports.userLoginPOST = function (req, res, next) {
-  console.log('post method');
-  user.userLoginPOST(req, res, next);
+module.exports.userLoginPOST = function(req, res, next) {
+    console.log('post method');
+    user.userLoginPOST(req, res, next);
 };
 
 // Get all Userss
-router.get('/', function (req, res) {
-  Users.list(req, res);
+router.get('/', verify, function(req, res) {
+    Users.list(req, res);
 });
 
 // Get single Users by id
-router.get('/show/:id', function (req, res) {
-  Users.show(req, res);
+router.get('/show/:id', function(req, res) {
+    Users.show(req, res);
 });
 
 /*
@@ -30,8 +31,8 @@ router.get('/create', function (req, res) {
 // Save Users
 
 // http://localhost:8080/users
-router.post('/save', function (req, res) {
-  Users.save(req, res);
+router.post('/save', function(req, res) {
+    Users.save(req, res);
 });
 
 
@@ -51,14 +52,14 @@ router.get('/edit/:id', function (req, res) {
 //  update the data of the users
 // http://localhost:8080/users/update/_id
 
-router.put('/update/:id', function (req, res) {
-  Users.update(req, res);
+router.put('/update/:id', function(req, res) {
+    Users.update(req, res);
 });
 
 // Delete the data of the user/customer
 
-router.delete('/delete/:id', function (req, res, next) {
-  Users.delete(req, res);
+router.delete('/delete/:id', function(req, res, next) {
+    Users.delete(req, res);
 });
 
 module.exports = router;
