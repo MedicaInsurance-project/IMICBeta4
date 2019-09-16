@@ -1,0 +1,11 @@
+<div class="sidenav" [ngStyle]="{'width.px': isOpen?'250':'0'}">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <a routerLink="/user/user-profile">Profile</a>
+    <a routerLink="/user/apply-for-claims">Apply Claims</a>
+    <a routerLink="/user/policy">My Policy</a>
+    <a href="#">Logout</a>
+  </div>
+  
+
+  <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; </span>
+  

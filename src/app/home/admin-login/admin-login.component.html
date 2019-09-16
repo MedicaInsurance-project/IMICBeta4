@@ -1,0 +1,33 @@
+
+
+<section class="cmspage mtb-40">
+    <div class="container">
+      <div class="page-desc">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <h1>Agent Login</h1>
+            <form  [formGroup]= "login" (ngSubmit)="onAdminSubmit()">
+              <div class="form-group col-sm-12">
+                <label>
+                    Userame:
+                    <input type="text" class="form-control seviceUsername" formControlName="seviceUsername">
+                </label>
+            </div>
+            
+            <div class="form-group col-sm-12">
+                <label>
+                    Password:
+                    <input type="password" class="form-control sevicePassword" formControlName="sevicePassword">
+                </label>
+            </div> 
+        
+            <div >
+            
+                <button class="btn btn-primary">Submit</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
